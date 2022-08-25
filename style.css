@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Pattaya', sans-serif;
+}
+
+body {
+    background-color: #d2d2d2;
+    font-size: 14px;
+    color: #000000;
+}
+
+.container {
+    width: 450px;
+    background-color: #ece6db;
+    padding: 90px 40px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    box-shadow: 0 20px 25px rgba(226, 156, 63, 0.25);
+    border-radius: 8px;
+    font-size: 18px;
+}
+
+.content-main {
+    float: left;
+    max-width: 280px;
+    padding-bottom: 20px;
+}
+div {
+    padding: 0;
+    margin: 0;
+    line-height: 22px;
+}
+div {
+    display: block;
+}
+.location {
+    margin: 0px;
+    padding: 0px 6px 0px 0px;
+}
+.content-cell {
+    padding: 3px;
+}
+
+
+select {
+    height: 23px;
+    max-width: 170px;
+}
+input, select {
+    font-family: inherit;
+}
+select:not(:-internal-list-box) {
+    overflow: visible !important;
+}
+select {
+    writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: fieldtext;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: auto;
+    box-sizing: border-box;
+    align-items: center;
+    white-space: pre;
+    -webkit-rtl-ordering: logical;
+    background-color: field;
+    cursor: default;
+    margin: 0em;
+    border-width: 1px;
+    border-style: solid;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+    border-radius: 0px;
+}
+.grid-container {
+    display: table;
+    border: 1px solid #e1e1e1;
+    border-bottom: 0px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.grid-row {
+    display: table-row;
+}
+.content-cell {
+    padding: 3px;
+}
+
+label {
+    font-size: 30px;
+    font-weight: 600;
+    border: 2px dashed #e9e5e5;
+    border-radius: 3px;
+}
+
+input {
+    width: 100%;
+    height: 50px;
+    border-radius: 9px;
+    border: 2px solid #d2d2d2;
+    outline: none;
+    margin-top: 8px;
+    padding: 0 10px;
+}
+
+input:focus {
+    border: 2px dashed #d2d2d2;
+    background-color: #d2d2d2;
+}
+        

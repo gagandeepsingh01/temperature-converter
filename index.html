@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Conversion</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="column-main">
+            <div class="content-main">
+                <h2>Temperature<br> Converter</h2>
+                <div id="label">Please enter a number:</div>
+                <div class="content-cell"><input type="text" id="input" name="input" value="" class="input-value"
+                        maxlength="12" pattern="^[\-\+]?(([1-9](\d*|\d{0,2}(,\d{3})*))|0)(\.\d{1,2})?$">
+                    <select id="unit" onchange="convertCustom()">
+                        <option selected="selected">Celsius (C)</option>
+                        <option>Fahrenheit (F)</option>
+                        <option>Kelvin</option>
+                        <option>Rankine</option>
+                    </select>
+                </div>
+                <div class="content-cell"><input type="button" id="convert-button" value="Convert"
+                        onclick="convertCustom()">
+                </div>
+                <div class="grid-container">
+                    <div class="grid-row">
+                        <div class="grid-item" id="item-1">Celsius (C)</div>
+                        <div class="grid-cell"><input type="text" id="output-1" readonly="readonly"></div>
+                    </div>
+                    <div class="grid-row">
+                        <div class="grid-item" id="item-2">Fahrenheit (F)</div>
+                        <div class="grid-cell"><input type="text" id="output-2" readonly="readonly"></div>
+                    </div>
+                    <div class="grid-row">
+                        <div class="grid-item" id="item-3">Kelvin</div>
+                        <div class="grid-cell"><input type="text" id="output-3" readonly="readonly"></div>
+                    </div>
+                    <div class="grid-row">
+                        <div class="grid-item" id="item-4">Rankine</div>
+                        <div class="grid-cell"><input type="text" id="output-4" readonly="readonly"></div>
+                    </div>
+                </div>
+            </div>
+            <script>function convertCustom() {
+                    var v = getValue();
+                    if (isNaN(v)) return;
+                    var fs = new Array();
+                    var e = document.getElementById('factors');
+                    if (e) { fs = e.value.split(',') }
+                    var f = getFactor(fs);
+                    if (isNaN(f))
+                        return;
+                    var o1 = document.getElementById('output-1');
+                    if (!o1) return;
+                    var o2 = document.getElementById('output-2');
+                    if (!o2) return; var o3 = document.getElementById('output-3');
+                    if (!o3) return; var o4 = document.getElementById('output-4');
+                    if (!o4) return; if (f == 1) {
+                        o1.value = v; o2.value = formatFloat((v * (9 / 5) + 32), 6, 4);
+                        o3.value = formatFloat((v + 273.15), 6, 4);
+                        o4.value = formatFloat(((v + 273.15) * (9 / 5)), 6, 4);
+                    }; if (f == 2) {
+                        o1.value = formatFloat(((v - 32) * (5 / 9)), 6, 4);
+                        o2.value = v; o3.value = formatFloat(((v + 459.67) * (5 / 9)), 6, 4);
+                        o4.value = formatFloat((v + 459.67), 6, 4);
+                    }; if (f == 3) {
+                        o1.value = formatFloat((v - 273.15), 6, 4);
+                        o2.value = formatFloat((v * (9 / 5) - 459.67), 6, 4);
+                        o3.value = v; o4.value = formatFloat((v * (9 / 5)), 6, 4);
+                    }; if (f == 4) {
+                        o1.value = formatFloat((v - 491.67) * (5 / 9), 6, 4);
+                        o2.value = formatFloat((v - 459.67), 6, 4);
+                        o3.value = formatFloat((v * (5 / 9)), 6, 4);
+                        o4.value = v;
+                    };
+                }</script>
+                
+            <script src="script.js"></script>
+            <script src="script1.js"></script>
+
+            <script src="script.js"></script>
+        </div>
+    </div>
+</body>
+
+</html>
